@@ -12,3 +12,12 @@
     state: present
   tags:
     - chromium
+
+- name: Install tor-browser
+  aur:
+    name: tor-browser
+    user: "{{ user.name }}"
+    skip_pgp: yes
+  tags:
+    - tor-browser
+    - aur
