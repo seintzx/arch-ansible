@@ -1,0 +1,27 @@
+---
+- name: Install LibreOffice
+  pacman:
+    name: libreoffice-fresh
+    state: present
+
+- name: Install pandoc and dependencies
+  pacman:
+    name:
+      - pandoc
+      - pandoc-citeproc
+    state: present
+
+- name: Install texlive-core
+  pacman:
+    name: texlive-core
+    state: present
+
+- name: Install texlive-latexextra
+  pacman:
+    name: texlive-latexextra
+    state: present
+
+- name: Install qalculate
+  pacman:
+    name: qalculate-gtk
+    state: present

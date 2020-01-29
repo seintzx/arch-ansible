@@ -12,7 +12,6 @@
   pacman:
     name:
       - zsh
-      - zsh-completions
     state: present
   tags:
     - shell

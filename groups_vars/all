@@ -8,31 +8,20 @@ hostname: junky
 
 editors:
     - neovim
+    - gvim
+    - vim-runtime
 
-aur:
-    dir: aur
-    packages:
-        - yay
-        - downgrade
-        - zplug
-        - miller
-        - myrepos
-        - ctmg
+bluetooth:
+    disable: False
 
 dotfiles:
     url: git@gitlab.com:seintz/config.git
     destination: hubrepo/mines/config
 
-
 aur:
     dir: aur
     packages:
         - yay
-        - downgrade
-        - zplug
-        - miller
-        - myrepos
-        - ctmg
 
 ssh:
     port: 22
@@ -43,4 +32,8 @@ gnupg:
     enable_agent: True
     emulate_ssh: True
 
+filesystem_packages:
+    - dosfstools
+    - ntfs-3g
+    - exfat-utils
 

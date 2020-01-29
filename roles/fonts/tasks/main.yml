@@ -1,0 +1,19 @@
+- name: Install fontconfig
+  pacman:
+    name: fontconfig
+    state: present
+
+- name: Install base fonts
+  pacman:
+    name:
+      - gsfonts
+      - terminus-font
+      - ttf-fira-code
+    state: present
+
+- name: Install font awesome
+  aur:
+    name:
+      - ttf-font-awesome
+      - ttf-font-awesome-4
+      - otf-font-awesome-4
