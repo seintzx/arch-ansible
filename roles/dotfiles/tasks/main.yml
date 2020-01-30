@@ -1,0 +1,19 @@
+---
+- name: Clone user dotfiles
+  git:
+    repo: "{{ dotfiles.url }}"
+    dest: /home/{{ user.name }}/{{ dotfiles.destination }} accept_hostkey=yes
+    update: no
+  when: dotfiles is defined
+  become: yes
+  become_user: "{{ user.name }}"
+
+- name: hardlink awesome config
+  file:
+    src: /home/{{ user.name }}/{{ dotfiles.destination }}/awesome
+    path: /home/{{ user.name }}/.config/awesome
+    state: hard
+  when: dotfiles is defined
+
+- name: configure Oh-My-Zsh
+  include_tasks: ohmyzsh.yml

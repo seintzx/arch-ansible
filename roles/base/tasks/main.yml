@@ -10,6 +10,15 @@
     - sudo
     - user
 
+- name: Copy sudo configuration
+  template:
+    src: sudoers.j2
+    dest: /etc/sudoers
+    mode: 0440
+    validate: 'visudo -cf %s'
+  tags:
+    - sudo
+
 - name: Use all cores when compressing packages
   lineinfile:
     dest: /etc/makepkg.conf
@@ -69,9 +78,6 @@
 - name: Enable fstrim for ssd
   service: name=fstrim.timer enabled=yes
 
-- name: Install smartmontools
-  pacman: name=smartmontools state=present
-
 - name: Install Intel microcode
   pacman: name=intel-ucode state=present
   when: '"GenuineIntel" in ansible_processor'
@@ -88,6 +94,11 @@
       - htop
   tags:
     - packages
+
+- name: Install editors
+  pacman:
+    state: present
+    name: "{{ editors }}"
 
 - name: Install shells
   include_tasks: shell.yml

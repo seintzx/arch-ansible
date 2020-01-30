@@ -1,7 +1,9 @@
 ---
 - name: Install Firefox
   pacman:
-    name: firefox
+    name:
+        - firefox
+        - flashplugin
     state: present
   tags:
     - firefox
@@ -15,7 +17,10 @@
 
 - name: Install tor-browser
   aur:
-    name: tor-browser
+    name:
+        - tor
+        - tor-browser
+        - torsocks
     user: "{{ user.name }}"
     skip_pgp: yes
   tags:
