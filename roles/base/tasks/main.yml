@@ -5,7 +5,10 @@
     - sudo
 
 - name: Add user to wheel group
-  user: name={{ user.name }} groups=wheel append=yes
+  user:
+      name: "{{ user.name }}"
+      groups: wheel
+      append: yes
   tags:
     - sudo
     - user
@@ -43,7 +46,7 @@
 
 - name: Set the hostname
   hostname:
-    name: {{ hostname }}
+    name: "{{ hostname }}"
   when: hostname is defined
 
 - name: Ensure locale en_US.UTF-8 locale is present

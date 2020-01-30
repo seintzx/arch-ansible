@@ -2,6 +2,27 @@
 
 This is used for post-installation process
 
+## usage
+
+install ansible
+```
+pacman -Syy python-passlib ansible
+```
+
+install and update submodules
+```
+git submodule init && git submodule update
+```
+
+run the playbook as root
+```
+ansible-playbook -i localhost playbook.yml
+```
+
+## test
+
+test the playbook with `ansible-playbook playbook.yml --check`
+
 ## Useful links
 
 - [simil spark, but easier](https://github.com/Titan-C/archlinux-ansible)

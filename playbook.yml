@@ -2,7 +2,29 @@
 - hosts: localhost
   become: yes
   roles:
+    - { role: android, tags: ['android'] }
+    - { role: archive, tags: ['archive'] }
     - { role: base, tags: ['base'] }
+    - { role: bluetooth, tags: ['base'] }
+    - { role: browser, tags: ['base'] }
+    - { role: calibre, tags: ['base'] }
+    - { role: clipboard, tags: ['base'] }
+    - { role: cron, tags: ['base'] }
+    - { role: dotfiles, tags: ['base'] }
+    - { role: filesystem, tags: ['base'] }
+    - { role: fonts, tags: ['base'] }
+    - { role: multimedia, tags: ['base'] }
+    - { role: network, tags: ['base'] }
+    - { role: office, tags: ['base'] }
+    - { role: pdf, tags: ['base'] }
+    - { role: python, tags: ['base'] }
+    - { role: qbittorrent, tags: ['base'] }
+    - { role: sound, tags: ['base'] }
+    - { role: virtualbox, tags: ['base'] }
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
+
+
+
+
