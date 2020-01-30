@@ -1,0 +1,45 @@
+---
+- name: Install Xorg
+  pacman: name=xorg-server state=present
+
+- name: Install Xinit
+  pacman: name=xorg-xinit state=present
+
+- name: Install xrandr
+  pacman:
+    state: present
+    name:
+     - xorg-xrandr
+     - arandr
+
+- name: Install X utils
+  pacman:
+    state: present
+    name:
+     - arandr
+     - numlockx
+     - xf86-input-libinput
+     - xorg-setxkbmap
+     - xorg-twm
+     - xorg-xclock
+     - xorg-xrandr
+     - xorg-xrdb
+     - xsel
+
+
+- name: Install xmodmap
+  pacman: name=xorg-xmodmap state=present
+
+- name: Install intel video hardware drivers
+  pacman:
+    state: present
+    name:
+      - xf86-video-intel
+      - libva-intel-driver
+      - xorg-xbacklight
+
+- name: Install mesa
+  pacman: name=mesa state=present
+
+- name: Add user to video group
+  user: name={{ user.name }} groups=video append=yes
