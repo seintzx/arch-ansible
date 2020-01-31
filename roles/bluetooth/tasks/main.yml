@@ -8,7 +8,6 @@
         - bluez-hid2hci
         - bluez-libs
         - bluez-utils
-        - pulseaudio-alsa
         - pulseaudio-bluetooth
         - pulseaudio-bluetooth-a2dp-gdm-fix
     state: present
