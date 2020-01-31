@@ -1,0 +1,27 @@
+---
+- name: Install awesomewm
+  aur:
+    name:
+        - awesome
+        - lain-git
+    state: present
+
+- name: hardlink awesome config
+  file:
+    src: /home/{{ user.name }}/{{ dotfiles.destination }}/awesome
+    path: /home/{{ user.name }}/.config/awesome
+    state: hard
+  when: dotfiles is defined
+
+- name: Install rofi
+  aur:
+    name:
+        - rofi
+    state: present
+
+- name: hardlink rofi config
+  file:
+    src: /home/{{ user.name }}/{{ dotfiles.destination }}/rofi/config
+    path: /home/{{ user.name }}/.config//rofi/config
+    state: hard
+  when: dotfiles is defined
