@@ -1,7 +1,7 @@
 user:
     name: seintz
     uid: 1000
-    group: seintz
+    group: users
     shell: /usr/bin/zsh
 
 hostname: junky
@@ -11,29 +11,9 @@ editors:
     - gvim
     - vim-runtime
 
-bluetooth:
-    disable: False
-
 dotfiles:
     url: git@gitlab.com:seintz/config.git
     destination: hubrepo/mines/config
 
-aur:
-    dir: aur
-    packages:
-        - yay
-
-ssh:
-    port: 22
-    user_key: /root/id_rsa
-    enable_sshd: False
-
-gnupg:
-    enable_agent: True
-    emulate_ssh: True
-
-filesystem_packages:
-    - dosfstools
-    - ntfs-3g
-    - exfat-utils
-
+bluetooth:
+    disable: False
