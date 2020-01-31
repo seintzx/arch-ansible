@@ -1,5 +1,13 @@
 ---
 - name: Install filesystem packages
-  pacman:
-    name: "{{ filesystem_packages }}"
+  aur:
+    name:
+      - dosfstools
+      - exfat-utils
+      - gvfs
+      - gvfs-mtp
+      - libmtp
+      - ntfs-3g
+      - thunar
+      - thunar-volman
     state: present
