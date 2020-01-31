@@ -1,3 +1,0 @@
----
-- name: Install qbittorrent
-  pacman: name=qbittorrent state=present

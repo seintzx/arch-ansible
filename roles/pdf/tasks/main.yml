@@ -1,8 +1,0 @@
-- name: Install Zathura and dependencies
-  pacman:
-    name:
-      - zathura-pdf-mupdf
-      - zathura
-    state: present
-  tags:
-    - zathura
