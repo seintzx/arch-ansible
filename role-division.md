@@ -15,7 +15,7 @@ greenclip
 # dotfiles
 # fonts
 # filesystem
-thuna thunar-volman gvfs-mtp libmtp ntfs-3g gvfs
+thunar thunar-volman gvfs-mtp libmtp ntfs-3g gvfs
 # lockscreen
 # multimedia
 imagemagic scrot gimp feh spotify sp vlc
