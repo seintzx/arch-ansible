@@ -1,0 +1,11 @@
+---
+- name: Install yay
+  aur: name=yay use=makepkg skip_installed=true
+  become: yes
+
+- name: Copy configuration
+  file:
+    src: /home/{{ user.name }}/{{ dotfiles.destination }}/yay/config.json
+    path: /home/{{ user.name }}/.config/yay/config.json
+    state: hard
+  when: dotfiles is defined
