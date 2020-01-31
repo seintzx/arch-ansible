@@ -1,6 +1,6 @@
 ---
 - name: Install bluetooth libraries and tools
-  pacman:
+  aur:
     name:
         - blueman
         - bluez
