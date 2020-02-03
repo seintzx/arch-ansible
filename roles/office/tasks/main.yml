@@ -1,27 +1,48 @@
 ---
 - name: Install LibreOffice
-  pacman:
-    name: libreoffice-fresh
+  aur:
+    name:
+        - libreoffice-fresh
+        - sublime-text-dev
+    state: present
+
+- name: Install calibre
+  aur:
+    name: calibre
     state: present
 
 - name: Install pandoc and dependencies
-  pacman:
+  aur:
     name:
       - pandoc
       - pandoc-citeproc
     state: present
 
-- name: Install texlive-core
-  pacman:
-    name: texlive-core
-    state: present
-
-- name: Install texlive-latexextra
-  pacman:
-    name: texlive-latexextra
+- name: Install latex
+  aur:
+    name:
+      - texlive-bin
+      - texlive-core
+      - texlive-latexextra
+      - texlive-most
     state: present
 
 - name: Install qalculate
-  pacman:
+  aur:
     name: qalculate-gtk
     state: present
+
+- name: Install zathura
+  aur:
+    name:
+      - zathura
+      - zathura-pdf-mupdf
+      - evince
+    state: present
+
+- name: hardlink zathura config
+  file:
+    src: /home/{{ user.name }}/{{ dotfiles.destination }}/zathura/zathurarc
+    path: /home/{{ user.name }}/.config//zathura/zathurarc
+    state: hard
+  when: dotfiles is defined

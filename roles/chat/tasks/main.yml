@@ -1,0 +1,30 @@
+---
+- name: Install telegram
+  aur:
+    name:
+        - telegram-desktop
+    state: present
+
+- name: Install signal
+  aur:
+    name:
+        - signal
+    state: present
+
+- name: Install slack
+  aur:
+    name:
+        - slack-desktop
+    state: present
+
+# - name: Install zoom
+#   aur:
+#     name:
+#         - zoom
+#     state: present
+
+# - name: Install skype
+#   aur:
+#     name:
+#         - skypeforlinux
+#     state: present

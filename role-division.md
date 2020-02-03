@@ -24,7 +24,7 @@ thunar thunar-volman gvfs-mtp libmtp ntfs-3g gvfs
 # multimedia
 imagemagic scrot gimp feh spotify sp vlc
 # network
-wireless_tools
+wireless_tools ssh
 # office
 zathura, calibre, latex, sublime, libreoffice, pandoc, etc pandoc sublime-text-dev texlive-bin texlive-most evince
 # python

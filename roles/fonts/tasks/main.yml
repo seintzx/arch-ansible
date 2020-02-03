@@ -1,10 +1,10 @@
 - name: Install fontconfig
-  pacman:
+  aur:
     name: fontconfig
     state: present
 
 - name: Install core fonts
-  pacman:
+  aur:
     name:
       - terminus-font
       - noto-fonts
@@ -12,7 +12,7 @@
     state: present
 
 - name: Install font awesome
-  pacman:
+  aur:
     name:
       - ttf-font-awesome
       - ttf-font-awesome-4

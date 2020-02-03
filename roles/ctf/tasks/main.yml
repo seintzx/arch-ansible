@@ -1,0 +1,13 @@
+---
+- name: Install CTF tools
+  aur:
+    name:
+        - metasploit
+        - radare2
+        - sqlmap
+        - tig
+        - trid
+        - volatility-git
+        - jpegoptim
+        - optipng
+    state: present
