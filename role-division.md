@@ -43,3 +43,6 @@ docker docker-compose docker-machine linux-headers virtualbox virtualbox-ext-ora
 # xorg
 xclip
 # yay
+
+
+Start from shell
